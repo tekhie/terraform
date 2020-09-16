@@ -7,7 +7,7 @@
 # which is read when the plan is run.  Yhe variable defined is "london_key_name", so the value is populated between the curly braces.
 # The actual variable "london_key_name" is then called in the RESOURCES section of the script
 
-# variable "london_key_name" {}
+variable "london_key_name" {}
 
 ##################################################################################
 # PROVIDERS
@@ -77,14 +77,14 @@ resource "aws_security_group" "allow_ssh" {
 resource "aws_instance" "nginx" {
   ami                    = data.aws_ami.aws-linux.id
   instance_type          = "t2.micro"
-  # key_name               = var.MyLondonKeyName
+  key_name               = "MyLondonKeyName" # this is the name of the keypair to use as seen in the AWS console
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
 
   connection {
     type        = "ssh"
     host        = self.public_ip
     user        = "ec2-user"
-    #private_key = var.london_key_name
+    private_key = var.london_key_name
 
   }
 

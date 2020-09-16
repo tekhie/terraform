@@ -4,6 +4,8 @@
 
 #The AWS variables are defined in the TerraformCLOUD variables section.
 
+variable "london_key_name" {}
+
 ##################################################################################
 # PROVIDERS
 ##################################################################################

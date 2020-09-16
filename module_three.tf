@@ -77,7 +77,7 @@ resource "aws_security_group" "allow_ssh" {
 resource "aws_instance" "nginx" {
   ami                    = data.aws_ami.aws-linux.id
   instance_type          = "t2.micro"
-  key_name               = "MyLondonKeyName" # this is the name of the keypair to use as seen in the AWS console
+  key_name               = "MyLondonKeyPair" # this is the name of the keypair to use as seen in the AWS console
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
 
   connection {

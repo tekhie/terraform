@@ -84,7 +84,7 @@ resource "aws_instance" "nginx" {
     type        = "ssh"
     host        = self.public_ip
     user        = "ec2-user"
-    private_key = var.london_key_name
+    # private_key = var.london_key_name
 
   }
 

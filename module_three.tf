@@ -3,6 +3,9 @@
 ##################################################################################
 
 #The AWS variables are defined in the TerraformCLOUD variables section.
+# the variable value which is the SSH key is defined in the TerraformVariables section of TFCLOUD. These variables are added into a TFVARS
+# which is read when the plan is run.  Yhe variable defined is "london_key_name", so the value is populated between the curly braces.
+# The actual variable "london_key_name" is then called in the RESOURCES section of the script
 
 variable "london_key_name" {}
 
